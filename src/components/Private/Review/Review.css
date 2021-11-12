@@ -1,0 +1,9 @@
+.form input {
+  border: none;
+  border-radius: 5px;
+  padding: 1%;
+}
+.form textarea {
+  border-radius: 5px;
+  padding: 15px 10px;
+}

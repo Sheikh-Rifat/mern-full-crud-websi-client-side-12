@@ -1,0 +1,12 @@
+.dashboard ul {
+  list-style: none;
+}
+.dashboard ul li {
+  color: white;
+}
+.dashboard ul a :hover {
+  color: rgb(214, 212, 212) !important;
+}
+.dashboard ul a {
+  text-decoration: none !important;
+}

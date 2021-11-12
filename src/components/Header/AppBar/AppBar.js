@@ -2,7 +2,8 @@ import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../../images/e5f926c322d7fdf80eafe38a0d12000c.svg";
 import useAuth from "../../../hooks/useAuth";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const AppBar = () => {
   const { user, logOut } = useAuth();
@@ -15,9 +16,16 @@ const AppBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link as={HashLink} to="/home#home">
+              Home
+            </Nav.Link>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
+            {user?.email && (
+              <Nav.Link as={NavLink} to="/dashboard">
+                Dashboard
+              </Nav.Link>
+            )}
           </Nav>
           <Nav className="justify-content-end mx-3">
             {user?.email ? (
@@ -34,9 +42,11 @@ const AppBar = () => {
               </Nav.Link>
             )}
           </Nav>
-          <Navbar.Text>
-            Signed in as: <a href="#login">Mark Otto</a>
-          </Navbar.Text>
+          {user?.email && (
+            <Navbar.Text>
+              Signed in as: <a href="#login">{user.displayName}</a>
+            </Navbar.Text>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

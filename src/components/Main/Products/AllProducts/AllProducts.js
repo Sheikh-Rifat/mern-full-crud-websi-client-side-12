@@ -14,7 +14,7 @@ const AllProducts = () => {
       <h2 className="my-5">Explore all DJI products</h2>
       <Container>
         {allProducts.map((allProduct) => (
-          <div className="border rounded my-5">
+          <div key={allProduct._id} className="border rounded my-5">
             <Row className=" my-3">
               <Col sm={12} md={6}>
                 <img
