@@ -1,0 +1,8 @@
+.banner {
+  background-image: url("../../../images/banner.jpg");
+  padding: 21% 19%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 5px 8px 15px rgb(133, 128, 128);
+}
