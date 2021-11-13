@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { NavLink, useRouteMatch, Switch, Route } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import AddProduct from "../AddProduct/AddProduct";
+import AdminRoute from "../AdminRoute/AdminRoute";
 import CheckOut from "../CheckOut/CheckOut";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import ManageOrders from "../ManageOrders/ManageOrders";
@@ -53,17 +54,17 @@ const DashBoard = () => {
                     </div>
                   )}
 
-                  {/* {!admin && ( */}
-                  <div>
-                    <NavLink to={`${url}/review`}>
-                      <li className="my-4"> Add a Review</li>
-                    </NavLink>
+                  {!admin && (
+                    <div>
+                      <NavLink to={`${url}/review`}>
+                        <li className="my-4"> Add a Review</li>
+                      </NavLink>
 
-                    <NavLink to={`${url}/checkOut`}>
-                      <li className="my-4">Check Out</li>
-                    </NavLink>
-                  </div>
-                  {/* )} */}
+                      <NavLink to={`${url}/checkOut`}>
+                        <li className="my-4">Check Out</li>
+                      </NavLink>
+                    </div>
+                  )}
                 </ul>
               </div>
             </Col>
@@ -79,19 +80,25 @@ const DashBoard = () => {
                     </Route>
                   )}
                   {admin && (
-                    <Route exact path={`${path}`}>
+                    <AdminRoute exact path={`${path}`}>
                       <ManageOrders></ManageOrders>
-                    </Route>
+                    </AdminRoute>
                   )}
-                  <Route exact path={`${path}/manageProducts`}>
-                    <ManageProducts></ManageProducts>
-                  </Route>
-                  <Route exact path={`${path}/addProduct`}>
-                    <AddProduct></AddProduct>
-                  </Route>
-                  <Route exact path={`${path}/makeAdmin`}>
-                    <MakeAdmin></MakeAdmin>
-                  </Route>
+                  {admin && (
+                    <AdminRoute exact path={`${path}/manageProducts`}>
+                      <ManageProducts></ManageProducts>
+                    </AdminRoute>
+                  )}
+                  {admin && (
+                    <AdminRoute exact path={`${path}/addProduct`}>
+                      <AddProduct></AddProduct>
+                    </AdminRoute>
+                  )}
+                  {admin && (
+                    <AdminRoute exact path={`${path}/makeAdmin`}>
+                      <MakeAdmin></MakeAdmin>
+                    </AdminRoute>
+                  )}
                   <Route exact path={`${path}/review`}>
                     <Review></Review>
                   </Route>

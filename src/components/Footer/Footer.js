@@ -6,7 +6,7 @@ import apple from "../../images/appStore.png";
 
 const Footer = () => {
   return (
-    <div className="mt-5 pt-5">
+    <div className="pt-5">
       <div className="mt-5">
         <div className="p-5 footer">
           <Container className="text-light">

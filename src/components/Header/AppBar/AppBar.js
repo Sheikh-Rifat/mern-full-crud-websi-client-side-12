@@ -19,8 +19,18 @@ const AppBar = () => {
             <Nav.Link as={HashLink} to="/home#home">
               Home
             </Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link as={NavLink} to="/allProducts">
+              Products
+            </Nav.Link>
+
+            <Nav.Link as={HashLink} to="/home#reviews">
+              Reviews
+            </Nav.Link>
+
+            <Nav.Link as={HashLink} to="/home#contact">
+              Contact
+            </Nav.Link>
+
             {user?.email && (
               <Nav.Link as={NavLink} to="/dashboard">
                 Dashboard

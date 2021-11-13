@@ -19,7 +19,7 @@ const Review = () => {
     // console.log(data);
     fetch("http://localhost:4000/review", {
       method: "POST",
-      headers: { "contetn-type": "application/json" },
+      headers: { "content-type": "application/json" },
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
