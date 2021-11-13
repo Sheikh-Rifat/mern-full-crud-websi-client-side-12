@@ -2,20 +2,34 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import useFirebase from "../../../hooks/useFirebase";
 import "./Review.css";
+import { ToastContainer, toast } from "react-toastify";
 
 const Review = () => {
   const { user } = useFirebase();
   const {
     register,
     handleSubmit,
-
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
     data.email = user.email;
     data.name = user.displayName;
-    console.log(data);
+    // console.log(data);
+    fetch("http://localhost:4000/review", {
+      method: "POST",
+      headers: { "contetn-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        if (data.insertedId) {
+          toast.success("Thanks for your review");
+          reset();
+        }
+      });
   };
 
   return (
@@ -47,6 +61,7 @@ const Review = () => {
         )}
 
         <input className="my-2" type="submit" />
+        <ToastContainer />
       </form>
     </div>
   );
