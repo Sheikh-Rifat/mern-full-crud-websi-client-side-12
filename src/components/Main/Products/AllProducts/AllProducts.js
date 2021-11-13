@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 const AllProducts = () => {
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/allProducts")
+    fetch("https://infinite-ocean-74604.herokuapp.com/allProducts")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);

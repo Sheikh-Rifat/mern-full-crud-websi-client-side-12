@@ -7,7 +7,7 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const [deleteProduct, setDeleteProduct] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/allproducts")
+    fetch("https://infinite-ocean-74604.herokuapp.com/allproducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [deleteProduct]);
@@ -26,7 +26,7 @@ const ManageProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4000/allproducts/${id}`;
+        const url = `https://infinite-ocean-74604.herokuapp.com/allproducts/${id}`;
         fetch(url, {
           method: "DELETE",
         })

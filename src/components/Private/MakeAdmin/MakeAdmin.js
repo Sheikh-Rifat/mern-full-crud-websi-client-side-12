@@ -9,7 +9,7 @@ const MakeAdmin = () => {
   const [adminReload, setAdminReload] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/admins")
+    fetch("https://infinite-ocean-74604.herokuapp.com/admins")
       .then((res) => res.json())
       .then((data) => {
         setAdmins(data);
@@ -24,7 +24,7 @@ const MakeAdmin = () => {
 
   const onSubmit = (data) => {
     // console.log(email);
-    fetch("http://localhost:4000/users/admin", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/users/admin", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

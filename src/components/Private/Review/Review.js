@@ -17,7 +17,7 @@ const Review = () => {
     data.email = user.email;
     data.name = user.displayName;
     // console.log(data);
-    fetch("http://localhost:4000/review", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

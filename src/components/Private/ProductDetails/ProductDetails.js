@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    const url = `http://localhost:4000/productDetails/${id}`;
+    const url = `https://infinite-ocean-74604.herokuapp.com/productDetails/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProductDetails(data));
@@ -31,7 +31,7 @@ const ProductDetails = () => {
     data.title = productDetails.title;
     data.status = "pending";
 
-    fetch("http://localhost:4000/userOrders", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/userOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -15,7 +15,7 @@ const Contact = () => {
   const onSubmit = (data) => {
     // console.log(data);
 
-    fetch("http://localhost:4000/queries", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/queries", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -9,7 +9,7 @@ const ManageOrders = () => {
   const [updateOrder, setUpdateOrder] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4000/orders")
+    fetch("https://infinite-ocean-74604.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [deleteOrder, updateOrder]);
@@ -28,7 +28,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yes, delete order!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/Orders/${id}`, {
+        fetch(`https://infinite-ocean-74604.herokuapp.com/Orders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +45,7 @@ const ManageOrders = () => {
 
   const handleApprove = (id) => {
     const status = { status: "Shipped" };
-    const url = `http://localhost:4000/orders/${id}`;
+    const url = `https://infinite-ocean-74604.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },

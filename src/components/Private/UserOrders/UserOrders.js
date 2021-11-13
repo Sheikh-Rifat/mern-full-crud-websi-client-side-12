@@ -10,7 +10,7 @@ const UserOrders = () => {
   const { user } = useAuth();
   // console.log(user);
   useEffect(() => {
-    const url = `http://localhost:4000/userOrders?email=${user.email}`;
+    const url = `https://infinite-ocean-74604.herokuapp.com/userOrders?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUserOrders(data));
@@ -30,7 +30,7 @@ const UserOrders = () => {
       confirmButtonText: "Yes, delete order!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:4000/userOrders/${id}`, {
+        fetch(`https://infinite-ocean-74604.herokuapp.com/userOrders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

@@ -17,7 +17,7 @@ const AddProduct = () => {
     data.name = user.displayName;
     // console.log(data);
 
-    fetch("http://localhost:4000/newProducts", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/newProducts", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

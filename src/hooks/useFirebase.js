@@ -95,7 +95,7 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:4000/admins${user.email}`)
+    fetch(`https://infinite-ocean-74604.herokuapp.com/admins${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);
@@ -103,7 +103,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName, password) => {
     const user = { email, displayName, password };
 
-    fetch("http://localhost:4000/users", {
+    fetch("https://infinite-ocean-74604.herokuapp.com/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
