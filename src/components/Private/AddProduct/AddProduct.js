@@ -33,7 +33,10 @@ const AddProduct = () => {
   return (
     <div>
       <h2>Add Product</h2>
-      <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="d-flex flex-column form"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <input
           type="text"
           placeholder="Product Name"

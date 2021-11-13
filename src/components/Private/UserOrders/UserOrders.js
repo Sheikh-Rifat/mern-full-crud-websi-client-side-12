@@ -14,7 +14,7 @@ const UserOrders = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setUserOrders(data));
-  }, [deleteOrder]);
+  }, [deleteOrder, user.email]);
 
   const handleCancel = (id) => {
     // console.log(id);

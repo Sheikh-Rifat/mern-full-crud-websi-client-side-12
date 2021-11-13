@@ -31,7 +31,7 @@ const Contact = () => {
   return (
     <div id="contact" className="mt-5">
       <div className="bg">
-        <h2 className="mb-4">Have a Question? Just Ask</h2>
+        <h2 className="mb-4 text-light">Have a Question? Just Ask</h2>
         <Container>
           <div className="bg-2">
             <form

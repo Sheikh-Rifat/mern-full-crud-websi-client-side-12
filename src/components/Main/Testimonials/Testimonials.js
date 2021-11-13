@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container } from "react-bootstrap";
 import Slider from "react-slick";
 import "./Testimonial.css";
 import ReactStars from "react-rating-stars-component";

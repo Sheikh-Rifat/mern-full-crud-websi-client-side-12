@@ -1,3 +1,20 @@
 .products-section {
   background: #93776f79;
 }
+.service {
+  position: relative;
+  overflow: hidden;
+}
+.custom-card {
+  background: #4b4547d5 !important;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -290px;
+  color: rgb(236, 220, 220);
+  transition: 0.4s all;
+}
+
+.service:hover .custom-card {
+  bottom: 0%;
+}

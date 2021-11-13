@@ -10,7 +10,7 @@ const AppBar = () => {
   return (
     <Navbar sticky="top" bg="dark" variant="dark" collapseOnSelect expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={NavLink} to="/">
           <img src={logo} alt="" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -9,21 +9,14 @@
 }
 
 .bg {
-  background: rgb(227, 44, 62);
-  background: linear-gradient(
-    90deg,
-    rgba(227, 44, 62, 1) 0%,
-    rgba(191, 113, 46, 0.4408446485623003) 0%,
-    rgba(213, 99, 33, 0.3513877795527156) 46%,
-    rgba(248, 98, 31, 0.37375199680511184) 96%,
-    rgba(214, 116, 33, 0.261930910543131) 100%
-  );
+  background-size: cover;
+  background-image: url("../../../images/banner.jpg");
   padding: 60px;
 }
 
 .bg-2 {
   background-image: url("../../../images/footer-bg.png");
-  background-color: #212121;
+  background-color: #21212191;
   width: 100%;
 
   padding: 50px;

@@ -7,9 +7,9 @@ const SingleProduct = ({ product }) => {
   return (
     <>
       <Col>
-        <Card className="h-100">
+        <Card className="h-100 service">
           <Card.Img variant="top" src={image} className="img-fluid" />
-          <Card.Body>
+          <Card.Body className="custom-card">
             <div className="d-flex justify-content-between m">
               <Card.Title>{title}</Card.Title>
               <Card.Text>Starts from ${price}</Card.Text>
