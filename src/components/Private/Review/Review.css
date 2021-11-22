@@ -1,9 +1,24 @@
-.form input {
+.review-form input {
   border: none;
   border-radius: 5px;
   padding: 1%;
 }
-.form textarea {
+.review-form input,
+select,
+textarea {
+  color: #1d1b1b;
+}
+.review-form input,
+textarea {
+  background: rgba(235, 232, 232, 0.884);
+}
+.review-form input::placeholder {
+  color: rgb(15, 15, 15);
+}
+.review-form textarea::placeholder {
+  color: rgb(32, 31, 31);
+}
+.review-form textarea {
   border-radius: 5px;
   padding: 15px 10px;
 }

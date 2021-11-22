@@ -42,7 +42,7 @@ const AppBar = () => {
               <Button
                 onClick={logOut}
                 variant="light"
-                className="me-3 project-btn"
+                className="me-3 project-btn-logout"
               >
                 Logout
               </Button>

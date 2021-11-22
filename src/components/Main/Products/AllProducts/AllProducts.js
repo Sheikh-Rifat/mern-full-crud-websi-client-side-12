@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-
+import "./AllProducts.css";
 const AllProducts = () => {
+  document.title = "DJI / All Products";
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
     fetch("https://infinite-ocean-74604.herokuapp.com/allProducts")
@@ -31,7 +32,7 @@ const AllProducts = () => {
                     Starts from ${allProduct.price}
                   </small>
                 </p>
-                <NavLink to={`/serviceDetails/${allProduct._id}`}>
+                <NavLink to={`/productDetails/${allProduct._id}`}>
                   <Button className="mt-3 project-btn">View details</Button>
                 </NavLink>
               </Col>

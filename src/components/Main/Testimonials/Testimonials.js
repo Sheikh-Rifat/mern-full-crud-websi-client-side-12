@@ -10,8 +10,8 @@ const Testimonials = () => {
     infinite: false,
     speed: 500,
 
-    slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
@@ -56,23 +56,23 @@ const Testimonials = () => {
       <Container className="text-start">
         <Slider {...settings}>
           {reviews.map((review) => (
-            <Col key={review._id}>
-              <Card>
-                <Card.Header>{review.name}</Card.Header>
-                <Card.Body>
-                  <Card.Text>{review.review}</Card.Text>
-                  <Card.Text>
-                    Rating out of 5 :
+            <Container>
+              <div key={review._id} class="reviewContainer">
+                <div class="content">
+                  <h5 class="text-start"> By {review.name}</h5>
+                  <h3>{review.review}</h3>
+                  <h3>
+                    Ratings :{" "}
                     <ReactStars
                       count={5}
                       edit={false}
                       size={30}
                       value={parseInt(review.rating)}
                     />
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
+                  </h3>
+                </div>
+              </div>
+            </Container>
           ))}
         </Slider>
       </Container>
@@ -81,3 +81,6 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+{
+  /* */
+}

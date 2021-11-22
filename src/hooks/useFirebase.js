@@ -17,6 +17,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const auth = getAuth();
 
@@ -49,13 +50,28 @@ const useFirebase = () => {
       });
   };
 
+  //  admin set
+  useEffect(() => {
+    fetch(`https://infinite-ocean-74604.herokuapp.com/admins${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAdmin(data.admin);
+        data.admin && setIsAdmin(true);
+      });
+  }, [user?.email, admin]);
+
   //   log in  system
   const loginUser = (email, password, location, history) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const destination = location?.state?.from || "/";
-        history.replace(destination);
+        const adminDestination = "/dashboard";
+
+        isAdmin
+          ? history.replace(destination)
+          : history.replace(adminDestination);
+
         setAuthError("");
       })
       .catch((error) => {
@@ -93,12 +109,6 @@ const useFirebase = () => {
         setIsLoading(false);
       });
   };
-
-  useEffect(() => {
-    fetch(`https://infinite-ocean-74604.herokuapp.com/admins${user.email}`)
-      .then((res) => res.json())
-      .then((data) => setAdmin(data.admin));
-  }, [user?.email]);
 
   const saveUser = (email, displayName, password) => {
     const user = { email, displayName, password };

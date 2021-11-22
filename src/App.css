@@ -5,3 +5,27 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+.project-btn {
+  background: rgb(231, 86, 19) !important;
+  border: none;
+}
+.project-btn:hover {
+  background: rgb(196, 72, 15) !important;
+}
+.project-btn-logout {
+  background: rgb(189, 211, 203) !important;
+  border: none;
+}
+.project-btn-logout:hover {
+  background: rgb(155, 153, 146) !important;
+}
+
+@media screen and (max-width: 767px) {
+  .banner h2 {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.8px rgb(20, 19, 19);
+    font-size: 40px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+}

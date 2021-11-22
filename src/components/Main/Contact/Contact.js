@@ -35,7 +35,7 @@ const Contact = () => {
         <Container>
           <div className="bg-2">
             <form
-              className="d-flex flex-column form "
+              className="d-flex flex-column form-contact "
               onSubmit={handleSubmit(onSubmit)}
             >
               <textarea
@@ -51,15 +51,15 @@ const Contact = () => {
                 type="email"
                 placeholder="Email"
                 className="custom-form my-2"
-                {...register("email", { required: true, min: 0, max: 5 })}
+                {...register("email", { required: true })}
               />
               {errors.email && (
                 <span className="text-light">
-                  Minimum rating can be 0 and maximum is 5
+                  Email is Required for queries!
                 </span>
               )}
 
-              <input className="my-2" type="submit" />
+              <input className="my-2 p-2 text-white" type="submit" />
               <ToastContainer />
             </form>
           </div>

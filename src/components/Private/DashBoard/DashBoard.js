@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Row } from "react-bootstrap";
 import { NavLink, useRouteMatch, Switch, Route } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import AddProduct from "../AddProduct/AddProduct";
@@ -12,6 +12,7 @@ import Review from "../Review/Review";
 import UserOrders from "../UserOrders/UserOrders";
 import "./DashBoard.css";
 const DashBoard = () => {
+  document.title = "DJI / Dashboard";
   const { user, admin } = useAuth();
   let { path, url } = useRouteMatch();
   return (
@@ -27,45 +28,47 @@ const DashBoard = () => {
             >
               <div className="dashboard ">
                 <h4 className="border-bottom">Dashboard</h4>
-                <ul className="my-3 text-start">
-                  {!admin && (
-                    <NavLink to={`${url}`}>
-                      <li className="my-4"> My Orders</li>
-                    </NavLink>
-                  )}
+                <Nav>
+                  <ul className="my-3 text-start">
+                    {!admin && (
+                      <Nav.Link as={NavLink} to={`${url}`}>
+                        <li className="my-4"> My Orders</li>
+                      </Nav.Link>
+                    )}
 
-                  {admin && (
-                    <div>
-                      <NavLink to={`${url}`}>
-                        <li className="my-4">Manage Orders</li>
-                      </NavLink>
+                    {admin && (
+                      <div>
+                        <Nav.Link as={NavLink} to={`${url}`}>
+                          <li className="my-4">Manage Orders</li>
+                        </Nav.Link>
 
-                      <NavLink to={`${url}/manageProducts`}>
-                        <li className="my-4">Manage Products</li>
-                      </NavLink>
+                        <Nav.Link as={NavLink} to={`${url}/manageProducts`}>
+                          <li className="my-4">Manage Products</li>
+                        </Nav.Link>
 
-                      <NavLink to={`${url}/addProduct`}>
-                        <li className="my-4">Add a Product</li>
-                      </NavLink>
+                        <Nav.Link as={NavLink} to={`${url}/addProduct`}>
+                          <li className="my-4">Add a Product</li>
+                        </Nav.Link>
 
-                      <NavLink to={`${url}/makeAdmin`}>
-                        <li className="my-4">Make admin</li>
-                      </NavLink>
-                    </div>
-                  )}
+                        <Nav.Link as={NavLink} to={`${url}/makeAdmin`}>
+                          Make admin
+                        </Nav.Link>
+                      </div>
+                    )}
 
-                  {!admin && (
-                    <div>
-                      <NavLink to={`${url}/review`}>
-                        <li className="my-4"> Add a Review</li>
-                      </NavLink>
+                    {!admin && (
+                      <div>
+                        <Nav.Link as={NavLink} to={`${url}/review`}>
+                          <li className="my-4"> Add a Review</li>
+                        </Nav.Link>
 
-                      <NavLink to={`${url}/checkOut`}>
-                        <li className="my-4">Check Out</li>
-                      </NavLink>
-                    </div>
-                  )}
-                </ul>
+                        <Nav.Link as={NavLink} to={`${url}/checkOut`}>
+                          <li className="my-4">Check Out</li>
+                        </Nav.Link>
+                      </div>
+                    )}
+                  </ul>
+                </Nav>
               </div>
             </Col>
             <Col sm={9} md={9}>

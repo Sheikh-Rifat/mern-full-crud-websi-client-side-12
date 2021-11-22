@@ -3,6 +3,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import AppBar from "./components/Header/AppBar/AppBar";
@@ -17,6 +19,7 @@ import PrivateRoute from "./components/Private/PrivateRoute/PrivateRoute";
 import DashBoard from "./components/Private/DashBoard/DashBoard";
 
 function App() {
+  AOS.init();
   return (
     <div className="App">
       <AuthProvider>

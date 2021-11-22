@@ -28,7 +28,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yes, delete order!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://infinite-ocean-74604.herokuapp.com/Orders/${id}`, {
+        fetch(`https://infinite-ocean-74604.herokuapp.com/userorders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

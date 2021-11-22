@@ -5,6 +5,7 @@ import "./Review.css";
 import { ToastContainer, toast } from "react-toastify";
 
 const Review = () => {
+  document.title = "DJI / Review";
   const { user } = useFirebase();
   const {
     register,
@@ -36,7 +37,7 @@ const Review = () => {
     <div>
       <h2>Review form</h2>
       <form
-        className="d-flex flex-column form"
+        className="d-flex flex-column review-form"
         onSubmit={handleSubmit(onSubmit)}
       >
         <textarea

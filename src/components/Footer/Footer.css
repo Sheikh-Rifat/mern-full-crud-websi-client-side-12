@@ -3,3 +3,6 @@
   background-color: #212121;
   width: 100%;
 }
+.footer ul {
+  list-style: none;
+}

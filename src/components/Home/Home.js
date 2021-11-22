@@ -5,6 +5,7 @@ import Products from "../Main/Products/Products";
 import Testimonials from "../Main/Testimonials/Testimonials";
 
 const Home = () => {
+  document.title = "DJI Drone A-12";
   return (
     <div id="home">
       <Banner></Banner>
