@@ -3,6 +3,7 @@ import { Card, Col, Container } from "react-bootstrap";
 import Slider from "react-slick";
 import "./Testimonial.css";
 import ReactStars from "react-rating-stars-component";
+import quotation from "../../../images/quotation.png";
 
 const Testimonials = () => {
   let settings = {
@@ -59,17 +60,23 @@ const Testimonials = () => {
             <Container>
               <div key={review._id} class="reviewContainer">
                 <div class="content">
-                  <h5 class="text-start"> By {review.name}</h5>
-                  <h3>{review.review}</h3>
-                  <h3>
-                    Ratings :{" "}
-                    <ReactStars
-                      count={5}
-                      edit={false}
-                      size={30}
-                      value={parseInt(review.rating)}
-                    />
-                  </h3>
+                  <div className="quotation">
+                    <img src={quotation} alt="" className="img-fluid" />
+                  </div>
+
+                  <div className="review-details pt-4">
+                    <h5 class="text-start"> By {review.name}</h5>
+                    <h3>{review.review}</h3>
+                    <h3>
+                      Ratings :{" "}
+                      <ReactStars
+                        count={5}
+                        edit={false}
+                        size={30}
+                        value={parseInt(review.rating)}
+                      />
+                    </h3>
+                  </div>
                 </div>
               </div>
             </Container>
