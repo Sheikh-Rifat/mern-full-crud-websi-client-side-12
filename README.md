@@ -14,13 +14,13 @@
 
 ## Updated with Email marketing platform & payment gateway with stripe
 
-![alt text](../a-12-client/src/images/Screenshot_10.png)
+![alt text](src/images/Screenshot_10.png)
 
 - Payment page
 - User can input his card number, and other related details
 - after completing payment , in order page - payment option will show paid
 - And this will be saved in the backend and will be updated in stripe
-  ![alt text]("../a-12-client/src/images/Screenshot_11.png)
+  ![alt text](images/Screenshot_11.png)
 
 ### Mailchimp
 
