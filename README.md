@@ -20,6 +20,7 @@
 - User can input his card number, and other related details
 - after completing payment , in order page - payment option will show paid
 - And this will be saved in the backend and will be updated in stripe
+- Demo Card Number : 378282246310005 CVC : any 4 digits Date : any future date Zip : any
   ![alt text](src/images/Screenshot_11.png)
 
 ### Mailchimp
