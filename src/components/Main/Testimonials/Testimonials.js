@@ -44,7 +44,7 @@ const Testimonials = () => {
 
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-ocean-74604.herokuapp.com/reviews")
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

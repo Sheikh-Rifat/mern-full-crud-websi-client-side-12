@@ -52,7 +52,7 @@ const useFirebase = () => {
 
   //  admin set
   useEffect(() => {
-    fetch(`https://infinite-ocean-74604.herokuapp.com/admins${user.email}`)
+    fetch(`https://enigmatic-taiga-27234.herokuapp.com/admins${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAdmin(data.admin);
@@ -113,7 +113,7 @@ const useFirebase = () => {
   const saveUser = (email, displayName, password) => {
     const user = { email, displayName, password };
 
-    fetch("https://infinite-ocean-74604.herokuapp.com/users", {
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/users", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

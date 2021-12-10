@@ -7,7 +7,7 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const [deleteProduct, setDeleteProduct] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-ocean-74604.herokuapp.com/allproducts")
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/allproducts")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [deleteProduct]);
@@ -26,7 +26,7 @@ const ManageProducts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `https://infinite-ocean-74604.herokuapp.com/allproducts/${id}`;
+        const url = `https://enigmatic-taiga-27234.herokuapp.com/allproducts/${id}`;
         fetch(url, {
           method: "DELETE",
         })

@@ -18,7 +18,7 @@ const DashBoard = () => {
   return (
     <div className="dashboard-section">
       <h2 className="my-4">User Dashboard of {user.displayName}</h2>
-      <div className="bg-secondary">
+      <div className="bg-dashboard">
         <Container>
           <Row>
             <Col
@@ -62,7 +62,7 @@ const DashBoard = () => {
                           <li className="my-4"> Add a Review</li>
                         </Nav.Link>
 
-                        <Nav.Link as={NavLink} to={`${url}/checkOut`}>
+                        <Nav.Link as={NavLink} to={`${url}/checkOut/:orderId`}>
                           <li className="my-4">Check Out</li>
                         </Nav.Link>
                       </div>
@@ -72,9 +72,9 @@ const DashBoard = () => {
               </div>
             </Col>
             <Col sm={9} md={9}>
-              <div className="dashboard-details text-light rounded my-2 py-3">
+              <div className="dashboard-details text-dark rounded my-2 py-3">
                 <Switch>
-                  <Route exact path={`${path}/checkOut`}>
+                  <Route exact path={`${path}/checkOut/:orderId`}>
                     <CheckOut></CheckOut>
                   </Route>
                   {!admin && (

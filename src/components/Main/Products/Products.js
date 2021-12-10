@@ -9,7 +9,7 @@ import droneView from "../../../images/droneView.png";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-ocean-74604.herokuapp.com/products")
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

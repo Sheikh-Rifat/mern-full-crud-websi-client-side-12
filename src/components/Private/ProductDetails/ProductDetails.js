@@ -11,7 +11,7 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    const url = `https://infinite-ocean-74604.herokuapp.com/productDetails/${id}`;
+    const url = `https://enigmatic-taiga-27234.herokuapp.com/productDetails/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProductDetails(data));
@@ -29,9 +29,10 @@ const ProductDetails = () => {
     data.email = user?.email;
     data.image = productDetails.image;
     data.title = productDetails.title;
+    data.price = productDetails.price;
     data.status = "pending";
 
-    fetch("https://infinite-ocean-74604.herokuapp.com/userOrders", {
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/userOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

@@ -3,6 +3,7 @@ import { Button, Table } from "react-bootstrap";
 import useAuth from "../../../hooks/useAuth";
 import { ToastContainer, toast } from "react-toastify";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const UserOrders = () => {
   const [userOrders, setUserOrders] = useState([]);
@@ -10,10 +11,13 @@ const UserOrders = () => {
   const { user } = useAuth();
   // console.log(user);
   useEffect(() => {
-    const url = `https://infinite-ocean-74604.herokuapp.com/userOrders?email=${user.email}`;
+    const url = `https://enigmatic-taiga-27234.herokuapp.com/userOrders?email=${user.email}`;
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setUserOrders(data));
+      .then((data) => {
+        setUserOrders(data);
+        console.log(data);
+      });
   }, [deleteOrder, user.email]);
 
   const handleCancel = (id) => {
@@ -30,12 +34,12 @@ const UserOrders = () => {
       confirmButtonText: "Yes, delete order!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://infinite-ocean-74604.herokuapp.com/userOrders/${id}`, {
+        fetch(`https://enigmatic-taiga-27234.herokuapp.com/userOrders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            // console.log(data)
+            // console.log(data);
             if (data.deletedCount) {
               toast.success("Order Removed");
               setDeleteOrder(data);
@@ -57,6 +61,7 @@ const UserOrders = () => {
             <th>Address</th>
             <th>Contact No.</th>
             <th>Product Name</th>
+            <th>Price</th>
             <th>Status</th>
             <th>Action</th>
           </tr>
@@ -70,8 +75,17 @@ const UserOrders = () => {
               <td className="text-light">{order.address}</td>
               <td className="text-light">{order.contact}</td>
               <td className="text-light">{order.title}</td>
+              <td className="text-light">{order.price}</td>
               <td className="text-light">{order.status}</td>
               <td>
+                {order.paymnet ? (
+                  "Paid"
+                ) : (
+                  <Link to={`/dashboard/checkOut/${order._id}`}>
+                    <Button className="btn btn-primary mx-2 mb-3"> Pay</Button>
+                  </Link>
+                )}
+
                 <Button
                   onClick={() => handleCancel(order._id)}
                   className="btn btn-warning mx-2"

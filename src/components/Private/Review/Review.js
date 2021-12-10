@@ -18,7 +18,7 @@ const Review = () => {
     data.email = user.email;
     data.name = user.displayName;
     // console.log(data);
-    fetch("https://infinite-ocean-74604.herokuapp.com/review", {
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/review", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

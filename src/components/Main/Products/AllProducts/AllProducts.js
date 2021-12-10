@@ -6,7 +6,7 @@ const AllProducts = () => {
   document.title = "DJI / All Products";
   const [allProducts, setAllProducts] = useState([]);
   useEffect(() => {
-    fetch("https://infinite-ocean-74604.herokuapp.com/allProducts")
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/allProducts")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   }, []);

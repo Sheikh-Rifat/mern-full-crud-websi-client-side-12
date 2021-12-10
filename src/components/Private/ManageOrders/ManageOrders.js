@@ -9,7 +9,7 @@ const ManageOrders = () => {
   const [updateOrder, setUpdateOrder] = useState(false);
 
   useEffect(() => {
-    fetch("https://infinite-ocean-74604.herokuapp.com/orders")
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/orders")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [deleteOrder, updateOrder]);
@@ -28,7 +28,7 @@ const ManageOrders = () => {
       confirmButtonText: "Yes, delete order!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://infinite-ocean-74604.herokuapp.com/userorders/${id}`, {
+        fetch(`https://enigmatic-taiga-27234.herokuapp.com/userorders/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -45,7 +45,7 @@ const ManageOrders = () => {
 
   const handleApprove = (id) => {
     const status = { status: "Shipped" };
-    const url = `https://infinite-ocean-74604.herokuapp.com/orders/${id}`;
+    const url = `https://enigmatic-taiga-27234.herokuapp.com/orders/${id}`;
     fetch(url, {
       method: "PUT",
       headers: { "content-type": "application/json" },
