@@ -14,7 +14,7 @@
 
 ## Updated with Email marketing platform & payment gateway with stripe
 
-![alt text]("../a-12-client/src/images/Screenshot_10.png)
+![alt text](../a-12-client/src/images/Screenshot_10.png)
 
 - Payment page
 - User can input his card number, and other related details
