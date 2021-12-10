@@ -12,6 +12,23 @@
 - If logged in, user can see hise/her orders, give a review, checkout, or cancel his order in user dashboard
 - If admin logs in, admin can see all orders, give admin permission to a user, add a product, or cancel order in admin dashboard
 
+## Updated with Email marketing platform & payment gateway with stripe
+
+![alt text]("../a-12-client/src/images/Screenshot_10.png)
+
+- Payment page
+- User can input his card number, and other related details
+- after completing payment , in order page - payment option will show paid
+- And this will be saved in the backend and will be updated in stripe
+  ![alt text]("../a-12-client/src/images/Screenshot_11.png)
+
+### Mailchimp
+
+![alt text]("../a-12-client/src/images/Screenshot_12.png)
+
+- After a user subscribes for newsletter, his/her email credential will be integrated with mailchimp contacts.
+  ![alt text]("../a-12-client/src/images/Screenshot_13.png)
+
 ## Bonus
 
 - Responsive

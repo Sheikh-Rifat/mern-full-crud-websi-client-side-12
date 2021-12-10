@@ -12,9 +12,7 @@ const CheckOut = () => {
   const { orderId } = useParams();
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(
-      `http://https://enigmatic-taiga-27234.herokuapp.com/:4000/userorders/${orderId}`
-    )
+    fetch(`https://enigmatic-taiga-27234.herokuapp.com/userorders/${orderId}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [orderId]);

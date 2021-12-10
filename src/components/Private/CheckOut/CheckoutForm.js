@@ -13,16 +13,13 @@ const CheckoutForm = ({ order }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
-    fetch(
-      "http://https://enigmatic-taiga-27234.herokuapp.com/:4000/create-payment-intent",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({ price }),
-      }
-    )
+    fetch("https://enigmatic-taiga-27234.herokuapp.com/create-payment-intent", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ price }),
+    })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
@@ -77,7 +74,7 @@ const CheckoutForm = ({ order }) => {
         last4: paymentMethod.card.last4,
         transaction: paymentIntent.client_secret.slice("_secret")[0],
       };
-      const url = `http://https://enigmatic-taiga-27234.herokuapp.com/:4000/userOrders/${_id}`;
+      const url = `https://enigmatic-taiga-27234.herokuapp.com/userOrders/${_id}`;
       fetch(url, {
         method: "PUT",
         headers: {
