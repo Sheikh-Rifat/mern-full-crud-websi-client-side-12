@@ -11,6 +11,8 @@
 - Implemented login system with email and password registration
 - If logged in, user can see hise/her orders, give a review, checkout, or cancel his order in user dashboard
 - If admin logs in, admin can see all orders, give admin permission to a user, add a product, or cancel order in admin dashboard
+- Server side code : https://github.com/Sheikh-Rifat/mern-full-crud-website-server-side-node-mongo-express-12
+- admin password : 123456
 
 ## Updated with Email marketing platform & payment gateway with stripe
 
