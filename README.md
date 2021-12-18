@@ -5,6 +5,7 @@
 # Niche product website with admin access
 
 - Drone related niche website
+- Integrated with mailchimp, stripe and working on redux also
 - Homepage has header,products,banner, reviews, Footer and one extra section
 - User can see details and confirm purchase by clicking view details button of the products
 - Email is automatically added if a user confirms an order of a product
