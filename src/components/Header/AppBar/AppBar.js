@@ -28,7 +28,7 @@ const AppBar = () => {
             </Nav.Link>
 
             <Nav.Link as={HashLink} to="/home#contact">
-              Contact
+              Newsletter
             </Nav.Link>
 
             {user?.email && (
